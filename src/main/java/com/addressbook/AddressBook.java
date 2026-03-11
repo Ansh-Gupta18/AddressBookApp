@@ -1,3 +1,4 @@
+
 package com.addressbook;
 
 import java.util.ArrayList;
@@ -93,5 +94,43 @@ public class AddressBook {
 
         if (!found)
             System.out.println("No contacts found in state: " + state);
+    }
+    
+    
+ // UC9 - View persons by City
+    public void viewPersonsByCity(String city) {
+
+        boolean found = false;
+
+        for (Contact contact : contactList) {
+
+            if (contact.getCity().equalsIgnoreCase(city)) {
+                System.out.println(contact);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No contacts found in city: " + city);
+        }
+    }
+
+
+    // UC9 - View persons by State
+    public void viewPersonsByState(String state) {
+
+        boolean found = false;
+
+        for (Contact contact : contactList) {
+
+            if (contact.getState().equalsIgnoreCase(state)) {
+                System.out.println(contact);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No contacts found in state: " + state);
+        }
     }
 }
